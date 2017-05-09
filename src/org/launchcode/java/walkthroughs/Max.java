@@ -3,6 +3,7 @@ package org.launchcode.java.walkthroughs;
 import java.util.ArrayList;
 
 /**
+ * walkthrough day 1
  * Created by raefo on 08-May-17.
  */
 public class Max {

@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
+ * prep work day 2
  * Created by raefo on 09-May-17.
  */
 public class NewGradeBookMap {

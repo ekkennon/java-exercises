@@ -1,6 +1,7 @@
 package org.launchcode.java.prepwork;
 
 /**
+ * prep work day 2
  * Created by raefo on 09-May-17.
  */
 public class PrintValues {

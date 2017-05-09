@@ -3,6 +3,7 @@ package org.launchcode.java.studios;
 import java.util.Scanner;
 
 /**
+ * studio day 1
  * Created by raefo on 08-May-17.
  */
 public class Area {
