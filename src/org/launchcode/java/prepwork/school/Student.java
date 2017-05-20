@@ -4,13 +4,26 @@ package org.launchcode.java.prepwork.school;
  * Created by raefo on 16-May-17.
  */
 public class Student {
+    private static int nextStudentId = 1;
     private int studentID;
     private String studentName;
     private int numCredits;
-    private double GPA;
+    private double gpa;
 
-    public Student() {
-        //todo initialize fields
+    public Student(String name, int id, int numCredits, double gpa) {
+        studentName = name;
+        studentID = id;
+        this.numCredits = numCredits;
+        this.gpa = gpa;
+    }
+
+    public Student(String name, int id) {
+        this(name, id, 0, 0);
+    }
+
+    public Student(String name) {
+        this(name, nextStudentId);
+        nextStudentId++;
     }
 
     public int getStudentID() {
@@ -38,10 +51,37 @@ public class Student {
     }
 
     public double getGPA() {
-        return GPA;
+        return gpa;
     }
 
-    public void setGPA(double GPA) {
-        this.GPA = GPA;
+    public void setGPA(double gpa) {
+        this.gpa = gpa;
+    }
+
+    public String getGradeLevel() {
+        if (numCredits < 30) {
+            return "Freshman";
+        } else if (numCredits < 60) {
+            return "Sophomore";
+        } else if (numCredits < 90) {
+            return "Junior";
+        } else {
+            return "Senior";
+        }
+    }
+
+    public void addGrade(int credits, double grade) {
+        numCredits += credits;
+        gpa = (gpa * numCredits) / numCredits;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return ((Student) o).getStudentID() == getStudentID();
+    }
+
+    @Override
+    public String toString() {
+        return getStudentID() + getStudentName() + " - " + getGPA();
     }
 }

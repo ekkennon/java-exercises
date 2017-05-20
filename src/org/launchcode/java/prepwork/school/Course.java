@@ -13,6 +13,13 @@ public class Course {
     private ArrayList<String> prereqs;
     private ArrayList<Student> enrollees;
 
+    public Course(String id, String name, String desc, String code) {
+        courseID = id;
+        courseName = name;
+        courseDesc = desc;
+        offeringCode = code;
+    }
+
     public String getCourseID() {
         return courseID;
     }
@@ -67,5 +74,16 @@ public class Course {
 
     public void setEnrollees(ArrayList<Student> enrollees) {
         this.enrollees = enrollees;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        Course c = (Course) o;
+        return c.getCourseID().equals(getCourseID()) && c.getOfferingCode().equals(getOfferingCode());
+    }
+
+    @Override
+    public String toString() {
+        return getCourseID() + getOfferingCode() + " " + getCourseName() + " - " + getCourseDesc();
     }
 }
