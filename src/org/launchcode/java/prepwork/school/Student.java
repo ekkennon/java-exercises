@@ -3,7 +3,7 @@ package org.launchcode.java.prepwork.school;
 /**
  * Created by raefo on 16-May-17.
  */
-public class Student {
+public abstract class Student {
     private static int nextStudentId = 1;
     private int studentID;
     private String studentName;
@@ -58,17 +58,7 @@ public class Student {
         this.gpa = gpa;
     }
 
-    public String getGradeLevel() {
-        if (numCredits < 30) {
-            return "Freshman";
-        } else if (numCredits < 60) {
-            return "Sophomore";
-        } else if (numCredits < 90) {
-            return "Junior";
-        } else {
-            return "Senior";
-        }
-    }
+    public abstract String getGradeLevel();
 
     public void addGrade(int credits, double grade) {
         numCredits += credits;
@@ -83,5 +73,10 @@ public class Student {
     @Override
     public String toString() {
         return getStudentID() + getStudentName() + " - " + getGPA();
+    }
+
+    @Override
+    public int hashCode() {
+        return hashCode();
     }
 }
