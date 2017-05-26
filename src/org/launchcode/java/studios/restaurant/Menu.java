@@ -23,6 +23,10 @@ public class Menu {
         items.add(item);
     }
 
+    public void removeItem(MenuItem item) {
+        items.remove(item);
+    }
+
     public Date getUpdated() {
         return updated;
     }
@@ -37,5 +41,14 @@ public class Menu {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        String menu = "";
+        for (MenuItem item : items) {
+            menu += item.toString() + "\n";
+        }
+        return menu;
     }
 }

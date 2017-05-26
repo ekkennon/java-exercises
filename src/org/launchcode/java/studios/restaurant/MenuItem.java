@@ -52,4 +52,9 @@ public class MenuItem {
     public void setNew(boolean aNew) {
         isNew = aNew;
     }
+
+    @Override
+    public String toString() {
+        return getName() + "$" + getPrice();
+    }
 }
